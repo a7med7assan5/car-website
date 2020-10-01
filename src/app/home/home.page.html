@@ -1,0 +1,85 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title class="center">
+            <img src="../../assets/img/car-logo.png" id="img">
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="animated-car"></div>
+    <h6>{{ 'BROWSEBYCATEGORY' | translate }}</h6>
+
+    <ion-row style="text-align: center;">
+        <ion-col size="4">
+            <div href="#">
+                <ion-icon name="car-sport-outline"></ion-icon>
+                <br>
+                <p> {{ 'NEWCARS' | translate }}</p>
+            </div>
+        </ion-col>
+        <ion-col size="4">
+            <div href="#">
+                <ion-icon name="car-outline"></ion-icon>
+                <br>
+                <p>{{ 'PREOWNEDCARS' | translate }}</p>
+            </div>
+        </ion-col>
+        <ion-col size="4">
+            <div href="#">
+                <ion-icon name="camera-outline"></ion-icon>
+                <br>
+                <p>{{ 'GALLERY' | translate }}</p>
+            </div>
+        </ion-col>
+    </ion-row>
+    <ion-row style="text-align: center;" id="row2">
+        <ion-col size="4">
+            <div href="#">
+                <ion-icon name="calculator-outline"></ion-icon>
+                <br>
+                <p> {{ 'CALCULATION' | translate }}</p>
+            </div>
+        </ion-col>
+        <ion-col size="4">
+            <div href="#">
+                <ion-icon name="notifications-outline"></ion-icon>
+                <br>
+                <p>{{ 'NOTIFICATIONS' | translate }}</p>
+            </div>
+        </ion-col>
+        <ion-col size="4">
+            <div href="#">
+                <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+                <br>
+                <p>{{ 'REVIEWS' | translate }}</p>
+            </div>
+        </ion-col>
+    </ion-row>
+
+    <h6>{{ 'LATESTCARS' | translate }}</h6>
+    <ion-row style="text-align: center;" id="latest-cars">
+        <ion-col size="4" *ngFor="let recentcars of RecentCarsdata">
+            <div href="#">
+                <img src="../../assets/img/images.jpg" alt=""> <br>
+                <!-- <p>{{ 'CAR' | translate }}</p> -->
+                <p><b>{{recentcars.Brand}}</b></p>
+                <p>{{recentcars.Model}}</p>
+            </div>
+        </ion-col>
+    </ion-row>
+
+    <br>
+    <br>
+    <br>
+    <h6>{{ 'MOSTVIEWEDCARS' | translate }}</h6>
+    <ion-row style="text-align: center;" id="latest-cars">
+        <ion-col size="4" *ngFor="let mostviewedcars of MostViewsCarsdata">
+            <div href="#">
+                <img src="../../assets/img/car.png" alt=""> <br>
+                <!-- <p>{{ 'CAR' | translate }}</p> -->
+                <p><b>{{mostviewedcars.Brand}}</b></p>
+                <p>{{mostviewedcars.Model}}</p>
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-content>

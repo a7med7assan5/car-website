@@ -1,0 +1,23 @@
+div {
+    height: 150px;
+    padding-top: 25px;
+    background-color: rgb(245, 240, 240);
+}
+
+ion-footer {
+    position: fixed;
+    bottom: 0;
+}
+
+ion-footer img {
+    width: 50px;
+}
+
+ion-icon,
+ion-label {
+    padding-top: 10px;
+}
+
+ion-header img {
+    width: 40px;
+}

@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title class="center">
+            <img src="../../assets/img/car-logo.png" id="img">
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="center car">
+        <img src="../../assets/img/car2.jpg" alt="">
+    </div>
+
+    <div class="search">
+
+        <ion-searchbar></ion-searchbar>
+
+        <ion-row>
+            <ion-col size="4">
+                <ion-select placeholder="{{ 'CATEGORY' | translate}}">
+                    <ion-select-option value="1">1</ion-select-option>
+                    <ion-select-option value="2">2</ion-select-option>
+                </ion-select>
+            </ion-col>
+            <ion-col size="4">
+                <ion-select placeholder="{{ 'MINYEAR' | translate}}">
+                    <ion-select-option value="1">1</ion-select-option>
+                    <ion-select-option value="2">2</ion-select-option>
+                </ion-select>
+            </ion-col>
+            <ion-col size="4">
+                <ion-select placeholder="{{ 'MAXYEAR' | translate}}">
+                    <ion-select-option value="1">1</ion-select-option>
+                    <ion-select-option value="2">2</ion-select-option>
+                </ion-select>
+            </ion-col>
+        </ion-row>
+
+        <ion-item class="searchPrice">
+            <ion-label>
+                <p>{{ 'PRICE' | translate}} {{rangeVal}} $</p>
+            </ion-label>
+        </ion-item>
+        <ion-item class="searchPrice">
+            <ion-range [(ngModel)]="rangeVal" min="100000" max="500000" step="10000" snaps="true" ticks="false"></ion-range>
+            <ion-icon name="search-outline" slot="end"></ion-icon>
+        </ion-item>
+
+
+    </div>
+
+
+</ion-content>
