@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="tabs/home"></ion-back-button>
+        </ion-buttons>
+        <ion-title slot="start">{{ 'REVIEWS' | translate }}</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item class="ion-activatable ion-focusable ripple-parent" [routerLink]="['/']">
+            <ion-thumbnail slot="start">
+                <img src="../../assets/img/car2.jpg">
+            </ion-thumbnail>
+            <ion-label>Review 1</ion-label>
+            <ion-icon name="star-half-outline" slot="end"></ion-icon>
+        </ion-item>
+    </ion-list>
+</ion-content>

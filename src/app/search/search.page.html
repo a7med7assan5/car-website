@@ -6,38 +6,43 @@
     </ion-toolbar>
 </ion-header>
 <ion-content>
-    <div class="center car">
-        <img src="../../assets/img/car2.jpg" alt="">
+    <!-- <div class="center car-s"></div> -->
+    <div class="animated-car">
+        <div class="hero">
+            <div class="highway"></div>
+            <div class="city"></div>
+            <div class="car">
+                <img src="../../assets/img/animated-car/car.png">
+            </div>
+            <div class="wheel">
+                <img src="../../assets/img/animated-car/wheel.png" class="back-wheel">
+                <img src="../../assets/img/animated-car/wheel.png" class="front-wheel">
+            </div>
+        </div>
     </div>
 
     <div class="search">
 
-        <ion-searchbar></ion-searchbar>
+        <ion-searchbar placeholder="{{ 'SEARCH' | translate}}"></ion-searchbar>
 
         <ion-row>
             <ion-col size="4">
-                <ion-select placeholder="{{ 'CATEGORY' | translate}}">
+                <ion-select [interfaceOptions]="customAlertOptions" placeholder="{{ 'CATEGORY' | translate}}">
                     <ion-select-option value="1">1</ion-select-option>
                     <ion-select-option value="2">2</ion-select-option>
                 </ion-select>
             </ion-col>
             <ion-col size="4">
-                <ion-select placeholder="{{ 'MINYEAR' | translate}}">
-                    <ion-select-option value="1">1</ion-select-option>
-                    <ion-select-option value="2">2</ion-select-option>
-                </ion-select>
+                <ion-datetime [pickerOptions]="customPickerOptions" placeholder="{{ 'MINYEAR' | translate }}" displayFormat="YYYY" min="1960" max="2021" id="minYearinput"></ion-datetime>
             </ion-col>
             <ion-col size="4">
-                <ion-select placeholder="{{ 'MAXYEAR' | translate}}">
-                    <ion-select-option value="1">1</ion-select-option>
-                    <ion-select-option value="2">2</ion-select-option>
-                </ion-select>
+                <ion-datetime [pickerOptions]="customPickerOptions" placeholder="{{ 'MAXYEAR' | translate }}" displayFormat="YYYY" min="1960" max="2021" id="maxYearinput"></ion-datetime>
             </ion-col>
         </ion-row>
 
         <ion-item class="searchPrice">
             <ion-label>
-                <p>{{ 'PRICE' | translate}} {{rangeVal}} $</p>
+                <p class="priceis">{{ 'PRICEIS' | translate}} {{rangeVal}} $</p>
             </ion-label>
         </ion-item>
         <ion-item class="searchPrice">
@@ -47,6 +52,7 @@
 
 
     </div>
+
 
 
 </ion-content>

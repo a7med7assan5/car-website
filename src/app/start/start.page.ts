@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateConfigService } from '../services/translate-config.service';
 
 @Component({
   selector: 'app-start',
@@ -13,6 +14,9 @@ export class startPage {
     initialSlide: 0,
     speed: 400
   };
-  constructor() {}
+  selectedLanguage: any;
+  constructor(private translateConfigService: TranslateConfigService) {
+    this.selectedLanguage = this.translateConfigService.getDefaultLanguage();
+  }
 
 }

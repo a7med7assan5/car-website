@@ -16,17 +16,13 @@ import { Globalization } from '@ionic-native/globalization/ngx';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
-}
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [HttpClientModule, BrowserModule, TranslateModule.forRoot({
     loader: {
       provide: TranslateLoader,
-      useFactory: HttpLoaderFactory,
+      useFactory: (LanguageLoader),
       deps: [HttpClient]
     }
   }), IonicModule.forRoot(), AppRoutingModule, ReactiveFormsModule, FormsModule],
@@ -41,3 +37,6 @@ export function HttpLoaderFactory(http: HttpClient) {
 })
 export class AppModule { }
 
+export function LanguageLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
+}

@@ -7,13 +7,13 @@
 </ion-header>
 <ion-content>
     <div class="center">
-        <h2>Welcome</h2>
-        <ion-button color="dark" fill="outline" [routerLink]="['/sign-in']">{{ 'SIGNINSIGNUP' | translate }}
+        <h2 class="header">Welcome</h2>
+        <ion-button fill="outline" [routerLink]="['/sign-in']">{{ 'SIGNINSIGNUP' | translate }}
         </ion-button>
     </div>
 
     <ion-list>
-        <ion-item [routerLink]="['/settings']">
+        <ion-item [routerLink]="['/tabs/settings']">
             <ion-icon name="settings-outline" slot="start"></ion-icon>
             <ion-label>{{ 'SETTINGS' | translate }}</ion-label>
         </ion-item>
@@ -29,6 +29,6 @@
 
     <ion-footer class="center">
         <img src="../../assets/img/car-logo.png" alt="">
-        <p>Copyright @2020 Cairo Belgium Car. All Rights Reserved</p>
+        <p class="footer">Copyright @2020 Cairo Belgium Car. All Rights Reserved</p>
     </ion-footer>
 </ion-content>

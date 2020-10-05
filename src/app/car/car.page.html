@@ -1,21 +1,18 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title class="center">
-            <img src="../../assets/img/car-logo.png" id="img">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="tabs/home"></ion-back-button>
+        </ion-buttons>
+        <ion-title slot="start">
+            CARNAME
         </ion-title>
     </ion-toolbar>
 </ion-header>
 <ion-content>
     <div>
-        <h1 class="center">
-            CAR NAME
-        </h1>
         <ion-list>
             <ion-item>
-                <ion-label>
-                    <p>{{ 'CARNAME' | translate}}</p>
-                    <h3>xxxx</h3>
-                </ion-label>
+                <ion-img src="../../assets/img/cars/car2.jpg"></ion-img>
             </ion-item>
             <ion-item>
                 <ion-label>
@@ -30,14 +27,23 @@
                 </ion-label>
             </ion-item>
 
-            <!-- state attributes -->
-            <ion-item class="center section">
+            <!-- description attributes -->
+            <ion-item>
                 <ion-label>
-                    {{ 'STATE' | translate }}
+                    <p>{{ 'DESCRIPTION' | translate}}</p>
+                    <h3>xxxx</h3>
                 </ion-label>
             </ion-item>
 
-            <ion-items>
+            <!-- state attributes -->
+            <ion-item class="center section" (click)="hide('state')">
+                <ion-label>
+                    {{ 'STATE' | translate }}
+                </ion-label>
+                <ion-icon name="caret-down-outline" slot="end"></ion-icon>
+            </ion-item>
+
+            <ion-items *ngIf="hideState">
                 <ion-item>
                     <ion-label>
                         <p>{{ 'CONDITION' | translate}}</p>
@@ -83,14 +89,14 @@
             </ion-items>
 
             <!-- performance attributes -->
-            <ion-item class="center section">
+            <ion-item class="center section" (click)="hide('performance')">
                 <ion-label>
                     {{ 'PERFORMANCE' | translate }}
                 </ion-label>
+                <ion-icon name="caret-down-outline" slot="end"></ion-icon>
             </ion-item>
 
-            <ion-items>
-
+            <ion-items *ngIf="hidePerformance">
                 <ion-item>
                     <ion-label>
                         <p>{{ 'GEARINGTYPE' | translate}}</p>
@@ -121,7 +127,7 @@
 
                 <ion-item>
                     <ion-label>
-                        <p>{{ 'HOURSEPOWER' | translate}}</p>
+                        <p>{{ 'HORSEPOWER' | translate}}</p>
                         <h3>xxxx</h3>
                     </ion-label>
                 </ion-item>
@@ -136,14 +142,14 @@
             </ion-items>
 
             <!-- environment attributes -->
-            <ion-item class="center section">
+            <ion-item class="center section" (click)="hide('environment')">
                 <ion-label>
                     {{ 'ENVIRONMENT' | translate }}
                 </ion-label>
+                <ion-icon name="caret-down-outline" slot="end"></ion-icon>
             </ion-item>
 
-            <ion-items>
-
+            <ion-items *ngIf="hideEnvironment">
                 <ion-item>
                     <ion-label>
                         <p>{{ 'FUEL' | translate}}</p>
@@ -182,14 +188,14 @@
             </ion-items>
 
             <!-- properties attributes -->
-            <ion-item class="center section">
+            <ion-item class="center section" (click)="hide('properties')">
                 <ion-label>
                     {{ 'PROPERTIES' | translate }}
                 </ion-label>
+                <ion-icon name="caret-down-outline" slot="end"></ion-icon>
             </ion-item>
 
-            <ion-items>
-
+            <ion-items *ngIf="hideProperties">
                 <ion-item>
                     <ion-label>
                         <p>{{ 'BRAND' | translate}}</p>
@@ -291,14 +297,14 @@
             </ion-items>
 
             <!-- equipment attributes -->
-            <ion-item class="center section">
+            <ion-item class="center section" (click)="hide('equipment')">
                 <ion-label>
                     {{ 'EQUIPMENT' | translate }}
                 </ion-label>
+                <ion-icon name="caret-down-outline" slot="end"></ion-icon>
             </ion-item>
 
-            <ion-items>
-
+            <ion-items *ngIf="hideEquipment">
                 <ion-item>
                     <ion-label>
                         <p>{{ 'COMFORTANDCONVENIENCE' | translate}}</p>
@@ -328,14 +334,6 @@
                 </ion-item>
 
             </ion-items>
-
-            <!-- description attributes -->
-            <ion-item>
-                <ion-label>
-                    <p>{{ 'DESCRIPTION' | translate}}</p>
-                    <h3>xxxx</h3>
-                </ion-label>
-            </ion-item>
 
         </ion-list>
     </div>

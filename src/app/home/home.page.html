@@ -6,80 +6,109 @@
     </ion-toolbar>
 </ion-header>
 <ion-content>
-    <div class="animated-car"></div>
-    <h6>{{ 'BROWSEBYCATEGORY' | translate }}</h6>
+    <div class="animated-car">
+        <div class="hero">
+            <div class="highway"></div>
+            <div class="city"></div>
+            <div class="car">
+                <img src="../../assets/img/animated-car/car.png">
+            </div>
+            <div class="wheel">
+                <img src="../../assets/img/animated-car/wheel.png" class="back-wheel">
+                <img src="../../assets/img/animated-car/wheel.png" class="front-wheel">
+            </div>
+        </div>
+    </div>
+
+    <h6 class="section">{{ 'BROWSEBYCATEGORY' | translate }}</h6>
 
     <ion-row style="text-align: center;">
-        <ion-col size="4">
-            <div href="#">
+        <ion-col size="6">
+            <div class="div1" class="div1" [routerLink]="['/tabs/new-cars']">
                 <ion-icon name="car-sport-outline"></ion-icon>
                 <br>
-                <p> {{ 'NEWCARS' | translate }}</p>
+                <p>{{ 'NEWCARS' | translate }}</p>
             </div>
         </ion-col>
-        <ion-col size="4">
-            <div href="#">
+        <ion-col size="6">
+            <div class="div1" [routerLink]="['/tabs/preowned-cars']">
                 <ion-icon name="car-outline"></ion-icon>
                 <br>
                 <p>{{ 'PREOWNEDCARS' | translate }}</p>
             </div>
         </ion-col>
-        <ion-col size="4">
-            <div href="#">
-                <ion-icon name="camera-outline"></ion-icon>
-                <br>
-                <p>{{ 'GALLERY' | translate }}</p>
-            </div>
-        </ion-col>
     </ion-row>
     <ion-row style="text-align: center;" id="row2">
-        <ion-col size="4">
-            <div href="#">
-                <ion-icon name="calculator-outline"></ion-icon>
-                <br>
-                <p> {{ 'CALCULATION' | translate }}</p>
-            </div>
-        </ion-col>
-        <ion-col size="4">
-            <div href="#">
+        <ion-col size="6">
+            <div class="div1" [routerLink]="['/tabs/notifications']">
                 <ion-icon name="notifications-outline"></ion-icon>
                 <br>
                 <p>{{ 'NOTIFICATIONS' | translate }}</p>
             </div>
         </ion-col>
-        <ion-col size="4">
-            <div href="#">
+        <ion-col size="6">
+            <div class="div1" [routerLink]="['/tabs/reviews']">
                 <ion-icon name="chatbox-ellipses-outline"></ion-icon>
                 <br>
                 <p>{{ 'REVIEWS' | translate }}</p>
             </div>
         </ion-col>
     </ion-row>
+    <ion-list>
+        <h6 class="section">{{ 'LATESTCARS' | translate }}</h6>
+        <ion-item>
+            <ion-slides pager="true" [options]="slideOpts">
+                <ion-slide>
+                    <ion-grid>
+                        <ion-img src="../../assets/img/car3.jpg" class="car-img"></ion-img>
+                        <ion-row class="car-name">
+                            <ion-col>
+                                <h1>CAR1</h1>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <p>2000$
+                                </p>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-slide>
+                <ion-slide>
+                    <h1>Slide 2</h1>
+                </ion-slide>
+                <ion-slide>
+                    <h1>Slide 3</h1>
+                </ion-slide>
+            </ion-slides>
+        </ion-item>
 
-    <h6>{{ 'LATESTCARS' | translate }}</h6>
-    <ion-row style="text-align: center;" id="latest-cars">
-        <ion-col size="4" *ngFor="let recentcars of RecentCarsdata">
-            <div href="#">
-                <img src="../../assets/img/images.jpg" alt=""> <br>
-                <!-- <p>{{ 'CAR' | translate }}</p> -->
-                <p><b>{{recentcars.Brand}}</b></p>
-                <p>{{recentcars.Model}}</p>
-            </div>
-        </ion-col>
-    </ion-row>
-
-    <br>
-    <br>
-    <br>
-    <h6>{{ 'MOSTVIEWEDCARS' | translate }}</h6>
-    <ion-row style="text-align: center;" id="latest-cars">
-        <ion-col size="4" *ngFor="let mostviewedcars of MostViewsCarsdata">
-            <div href="#">
-                <img src="../../assets/img/car.png" alt=""> <br>
-                <!-- <p>{{ 'CAR' | translate }}</p> -->
-                <p><b>{{mostviewedcars.Brand}}</b></p>
-                <p>{{mostviewedcars.Model}}</p>
-            </div>
-        </ion-col>
-    </ion-row>
+        <h6 class="section">{{ 'MOSTVIEWEDCARS' | translate }}</h6>
+        <ion-item>
+            <ion-slides pager="true" [options]="slideOpts">
+                <ion-slide>
+                    <ion-grid>
+                        <ion-img src="../../assets/img/car3.jpg" class="car-img"></ion-img>
+                        <ion-row class="car-name">
+                            <ion-col>
+                                <h1>CAR1</h1>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <p>2000$
+                                </p>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-slide>
+                <ion-slide>
+                    <h1>Slide 2</h1>
+                </ion-slide>
+                <ion-slide>
+                    <h1>Slide 3</h1>
+                </ion-slide>
+            </ion-slides>
+        </ion-item>
+    </ion-list>
 </ion-content>

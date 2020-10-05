@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateConfigService } from '../services/translate-config.service';
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  selectedLanguage: any;
+  constructor(private translateConfigService: TranslateConfigService) {
+    this.selectedLanguage = this.translateConfigService.getDefaultLanguage();
+  }
 
 }

@@ -21,25 +21,7 @@ const routes: Routes = [
     path: 'sign-up',
     loadChildren: () => import('./sign-up/sign-up.module').then(m => m.signUpPageModule)
   },
-  {
-    path: 'settings',
-    loadChildren: () => import('./settings/settings.module').then(m => m.settingsPageModule)
-  },
-
-
-  {
-    path: 'search',
-    loadChildren: () => import('./search/search.module').then(m => m.searchPageModule)
-  },
-  {
-    path: 'car',
-    loadChildren: () => import('./car/car.module').then(m => m.carPageModule)
-  },
-  {
-    path: 'add-car',
-    loadChildren: () => import('./add-car/add-car.module').then(m => m.addCarPageModule)
-  },
-
+ 
 
   {
     path: '',

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateConfigService } from '../services/translate-config.service';
 
 @Component({
   selector: 'app-profile',
@@ -6,7 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['profile.page.scss']
 })
 export class profilePage {
-
-  constructor() {}
-
+  selectedLanguage: any;
+  constructor(private translateConfigService: TranslateConfigService) {
+    this.selectedLanguage = this.translateConfigService.getDefaultLanguage();
+  }
+  
 }

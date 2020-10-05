@@ -1,9 +1,9 @@
 <ion-header>
     <ion-toolbar>
-        <!-- <ion-buttons slot="start">
-            <ion-back-button defaultHref="users"></ion-back-button>
-        </ion-buttons> -->
-        <ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="start"></ion-back-button>
+        </ion-buttons>
+        <ion-title slot="start">
             {{ 'SIGNUP' | uppercase | translate}}
         </ion-title>
     </ion-toolbar>
@@ -32,7 +32,7 @@
                 </ion-label>
             </ion-item>
             <ion-item>
-                <ion-input type="text" placeholder="Enter User Name" formControlName="name" id="nameinput" #name required></ion-input>
+                <ion-input type="text" placeholder="{{ 'ENTERNAME' | translate }}" formControlName="name" id="nameinput" #name required></ion-input>
             </ion-item>
             <div class="validation-errors">
                 <ng-container *ngFor="let validation of validation_messages.name">
@@ -47,7 +47,7 @@
                 </ion-label>
             </ion-item>
             <ion-item>
-                <ion-input inputmode="email" placeholder="Enter User Email" formControlName="email" id="emailinput" #email required></ion-input>
+                <ion-input inputmode="email" placeholder="{{ 'ENTEREMAIL' | translate }}" formControlName="email" id="emailinput" #email required></ion-input>
             </ion-item>
             <div class="validation-errors">
                 <ng-container *ngFor="let validation of validation_messages.email">
@@ -62,7 +62,7 @@
                 </ion-label>
             </ion-item>
             <ion-item>
-                <ion-input formControlName="password" id="passwordinput2" [type]="showPassword ? 'text' : 'password'" placeholder="Enter User Password" #password required></ion-input>
+                <ion-input formControlName="password" id="passwordinput2" [type]="showPassword ? 'text' : 'password'" placeholder="{{ 'ENTERPASSWORD' | translate }}" #password required></ion-input>
                 <ion-icon [name]="passwordToggleIcon" slot="end" (click)="togglePassword()"></ion-icon>
             </ion-item>
             <div class="validation-errors">
